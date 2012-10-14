@@ -55,7 +55,7 @@
     </script>
     
             <script>
-function gObj(B){var A;if(document.all){if(typeof B=="string"){return document.all(B)}else{return B.style}}if(document.getElementById){if(typeof B=="string"){return document.getElementById(B)}else{return B.style}}return null}function showquickmsg(B,A){if(A){B="<font color=red>"+B+"</font>"}gObj("coutput").innerHTML=B}function trimAll(A){while(A.substring(0,1)==" "){A=A.substring(1,A.length)}while(A.substring(A.length-1,A.length)==" "){A=A.substring(0,A.length-1)}return A}function getNum(A){outputNum=0;for(i=0;i<A.length;i++){outputNum+=A.charCodeAt(i)}return outputNum}function calc(){cnameone=trimAll(gObj("cnameone").value);cnametwo=trimAll(gObj("cnametwo").value);if(cnameone.length<1){showquickmsg("Please provide name one!",true);return }else{if(cnametwo.length<1){showquickmsg("Please provide name two!",true);return }}cnameone=cnameone.toLowerCase();cnametwo=cnametwo.toLowerCase();totalNum=getNum(cnameone)*getNum(cnametwo);finalScore=totalNum%100; showAlert(finalScore); vibrate();};
+function gObj(B){var A;if(document.all){if(typeof B=="string"){return document.all(B)}else{return B.style}}if(document.getElementById){if(typeof B=="string"){return document.getElementById(B)}else{return B.style}}return null}function showquickmsg(B,A){if(A){B="<font color=red>"+B+"</font>"}gObj("coutput").innerHTML=B}function trimAll(A){while(A.substring(0,1)==" "){A=A.substring(1,A.length)}while(A.substring(A.length-1,A.length)==" "){A=A.substring(0,A.length-1)}return A}function getNum(A){outputNum=0;for(i=0;i<A.length;i++){outputNum+=A.charCodeAt(i)}return outputNum}function calc(){cnameone=trimAll(gObj("cnameone").value);cnametwo=trimAll(gObj("cnametwo").value);if(cnameone.length<1){showquickmsg("Please provide name one!",true);return }else{if(cnametwo.length<1){showquickmsg("Please provide name two!",true);return }}cnameone=cnameone.toLowerCase();cnametwo=cnametwo.toLowerCase();totalNum=getNum(cnameone)*getNum(cnametwo); finalScore=(totalNum%100); showAlert(finalScore); vibrate();};
 </script>
 
     </head>
@@ -68,6 +68,9 @@ function gObj(B){var A;if(document.all){if(typeof B=="string"){return document.a
                 </h3>
             </div>
             <div data-role="content">
+            
+            <p>Sometimes you'd like to know if a relationship with someone could work out. Therefore Doctor Love himself designed this great machine for you! To find out what the chances for you and your dream partner are, just fill in text boxes below, and press Calculate.</p>
+            
                 <div data-role="fieldcontain">
                     <fieldset data-role="controlgroup">
                         <label for="name">
@@ -76,6 +79,7 @@ function gObj(B){var A;if(document.all){if(typeof B=="string"){return document.a
                         <input name="cnameone" id="cnameone" placeholder="Your name" value="" type="text" />
                     </fieldset>
                 </div>
+                
                 <div data-role="fieldcontain">
                     <fieldset data-role="controlgroup">
                         <label for="cname">
@@ -84,10 +88,13 @@ function gObj(B){var A;if(document.all){if(typeof B=="string"){return document.a
                         <input name="cnametwo" id="cnametwo" placeholder="Crush!" value="" type="text" />
                     </fieldset>
                 </div>
-                <input type="submit" data-theme="a" value="Submit" onclick="calc();" />
+                 
+                <input type="submit" data-theme="a" value="Calculate" onclick="calc();" />
             </div>
             
             <div id="coutput"></div></td>
+            
+            <img alt="" width="100%" src="love.png">
             
             <div data-theme="d" data-role="footer" data-position="fixed">
                 <h3>
